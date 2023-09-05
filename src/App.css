@@ -3,7 +3,7 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
 
 .App {
-  margin: 25px 50px;
+  margin: 10px 50px;
   font-family: 'Montserrat', serif;
 }
 
@@ -16,8 +16,9 @@ header {
 .logo {
   display: flex;
   align-items: center;
-  gap: 1.5em;
+  gap: 2.5em;
   font-size: 0.8rem;
+  color: #777;
 }
 
 .logo img {
@@ -28,4 +29,22 @@ header {
 header ul {
   display: flex;
   list-style-type: none;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+  margin: 0 5.5em 0 0;
+}
+
+.link {
+  color: blue;
+  text-decoration: none;
+}
+
+.link-line {
+  color: #888;
+  font-size: 1.5rem;
+  margin: 0 1rem 0 1.5rem;
 }
