@@ -1,4 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+
+.App {
+  font-family: 'Montserrat', serif;
+}
+
 header {
+  margin: 0 40px;
   display: flex;
   justify-content: space-between;
   padding: 1% 3%;
@@ -7,15 +16,19 @@ header {
 .logo {
   display: flex;
   align-items: center;
-  gap: 1em;
+  gap: 1.5em;
 }
 
 .logo img {
-  width: 4em;
-  height: 4em;
+  width: 4.5em;
+  height: 4.5em;
 }
 
 header ul {
   display: flex;
   list-style-type: none;
+}
+
+hr {
+  margin: 0 50px;
 }
