@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Table } from 'react-bootstrap';
 import { fetchMissions } from '../redux/missions/missionsSlice';
 
 function Missions() {
@@ -17,14 +18,24 @@ function Missions() {
     return <div>Loading...</div>;
   } if (status === 'succeeded') {
     return (
-      <div>
-        {missions.map((mission) => (
-          <div key={mission.mission_id}>
-            <h2>{mission.mission_name}</h2>
-            <p>{mission.description}</p>
-          </div>
-        ))}
-      </div>
+      <Table striped bordered hover>
+        <thead>
+          <tr>
+            <th>Mission</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th> - </th>
+          </tr>
+        </thead>
+        <tbody>
+          {missions.map((mission) => (
+            <tr key={mission.mission_id}>
+              <td>{mission.mission_name}</td>
+              <td>{mission.description}</td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
     );
   } if (status === 'failed') {
     return <div>Error loading missions.</div>;
