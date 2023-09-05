@@ -7,6 +7,7 @@ const store = configureStore({
     missions: missionsReducer,
     rockets: rocketReducer,
   },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 });
 
 export default store;
