@@ -1,5 +1,5 @@
 // Header.js
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, NavLink } from 'react-router-dom';
 import planet from '../assets/planet.png';
 import Rockets from './Rockets';
 import Missions from './Missions';
@@ -13,16 +13,16 @@ const Header = () => (
         <h1>Space Travelers&apos; Hub</h1>
       </div>
       <div className="links">
-        <Link to="/" className="link">
+        <NavLink to="/" className="link">
           Rockets
-        </Link>
-        <Link to="/missions" className="link">
+        </NavLink>
+        <NavLink to="/missions" className="link">
           Missions
-        </Link>
-        <Link to="/profile" className="link">
+        </NavLink>
+        <NavLink to="/profile" className="link">
           <span className="link-line">|</span>
           Profile
-        </Link>
+        </NavLink>
       </div>
     </header>
     <hr />
