@@ -21,15 +21,15 @@ function Missions() {
       <Table striped bordered hover>
         <thead>
           <tr>
-            <th>Mission ID</th>
-            <th>Mission Name</th>
+            <th>Mission</th>
             <th>Description</th>
+            <th>Status</th>
+            <th> - </th>
           </tr>
         </thead>
         <tbody>
           {missions.map((mission) => (
             <tr key={mission.mission_id}>
-              <td>{mission.mission_id}</td>
               <td>{mission.mission_name}</td>
               <td>{mission.description}</td>
             </tr>
