@@ -5,12 +5,13 @@
 .App {
   margin: 10px 50px;
   font-family: 'Montserrat', serif;
+  padding: 1% 3%;
 }
 
 header {
   display: flex;
   justify-content: space-between;
-  padding: 1% 3%;
+  margin: 0 0 1% 0;
 }
 
 .logo {
@@ -35,7 +36,6 @@ header ul {
   display: flex;
   align-items: center;
   gap: 1.5em;
-  margin: 0 5.5em 0 0;
 }
 
 .link {
@@ -43,8 +43,12 @@ header ul {
   text-decoration: none;
 }
 
+.link:active {
+  text-decoration: underline;
+}
+
 .link-line {
   color: #888;
   font-size: 1.5rem;
-  margin: 0 1rem 0 1.5rem;
+  margin: 0 1.3rem 0 0;
 }
