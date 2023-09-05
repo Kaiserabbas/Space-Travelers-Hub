@@ -1,0 +1,21 @@
+.rocket {
+    display: flex;
+    gap: 1em;
+    margin: 1em 1.5em;
+}
+
+.rocket img {
+    width: 30%;
+    height: 100%;
+}
+
+.rocket-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-weight: 600;
+}
+
+
+
+
