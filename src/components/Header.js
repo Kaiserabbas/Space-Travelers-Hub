@@ -1,4 +1,3 @@
-// Header.js
 import { Routes, Route, NavLink } from 'react-router-dom';
 import planet from '../assets/planet.png';
 import Rockets from './Rockets';
@@ -13,13 +12,13 @@ const Header = () => (
         <h1>Space Travelers&apos; Hub</h1>
       </div>
       <div className="links">
-        <NavLink to="/" className="link">
+        <NavLink to="/" className="link" activeClassName="active-link">
           Rockets
         </NavLink>
-        <NavLink to="/missions" className="link">
+        <NavLink to="/missions" className="link" activeClassName="active-link">
           Missions
         </NavLink>
-        <NavLink to="/profile" className="link">
+        <NavLink to="/profile" className="link" activeClassName="active-link">
           <span className="link-line">|</span>
           Profile
         </NavLink>
