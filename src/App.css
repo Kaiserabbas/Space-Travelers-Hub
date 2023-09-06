@@ -43,7 +43,9 @@ header ul {
   text-decoration: none;
 }
 
-.link:active {
+.active-link {
+  font-weight: bold;
+  color: blue;
   text-decoration: underline;
 }
 

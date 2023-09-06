@@ -1,4 +1,3 @@
-// Header.js
 import { Routes, Route, NavLink } from 'react-router-dom';
 import planet from '../assets/planet.png';
 import Rockets from './Rockets';

@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-// Asynchronous action to fetch missions
 export const fetchMissions = createAsyncThunk(
   'missions/fetchMissions',
   async () => {
@@ -23,7 +22,24 @@ const initialState = {
 const missionsSlice = createSlice({
   name: 'missions',
   initialState,
-  reducers: {},
+  reducers: {
+    joinMission: (state, action) => {
+      state.missions = state.missions.map((mission) => {
+        if (mission.mission_id !== action.payload) {
+          return mission;
+        }
+        return { ...mission, reserved: true };
+      });
+    },
+    leaveMission: (state, action) => {
+      state.missions = state.missions.map((mission) => {
+        if (mission.mission_id !== action.payload) {
+          return mission;
+        }
+        return { ...mission, reserved: false };
+      });
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchMissions.pending, (state) => {
@@ -39,5 +55,5 @@ const missionsSlice = createSlice({
       });
   },
 });
-
+export const { joinMission, leaveMission } = missionsSlice.actions;
 export default missionsSlice.reducer;
