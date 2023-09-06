@@ -7,6 +7,10 @@ function Profile() {
   const dispatch = useDispatch();
   const missions = useSelector((state) => state.missions.missions);
   const joinedMissions = missions.filter((mission) => mission.reserved);
+
+  const rockets = useSelector((state) => state.rockets.rockets);
+  const reservedRockets = rockets.filter((rocket) => rocket.reserved);
+
   const handleJoinMission = (id) => {
     dispatch(joinMission(id));
   };
@@ -16,13 +20,19 @@ function Profile() {
   };
   return (
     <div>
-      <h1>My Profile</h1>
       <div className="profile">
         <div className="rockets-profile">
           <h2>Rockets</h2>
+          <ul className="rockets-list">
+            {reservedRockets.map((rocket) => (
+              <li className="list-item" key={rocket.id}>
+                {rocket.rocket_name}
+              </li>
+            ))}
+          </ul>
         </div>
         <div>
-          <h2>Joined Missions</h2>
+          <h2>Missions</h2>
           <ul className="missions-profile">
             {joinedMissions.map((mission) => (
               <li key={mission.mission_id} className="missions-list">
