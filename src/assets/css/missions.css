@@ -1,26 +1,19 @@
-table {
-  font-size: 0.8rem;
+Table {
+    font-size: 0.8rem;
 }
 
 thead {
-  font-size: 1rem;
+    font-size: 1rem;
 }
 
 button {
-  border-radius: 5px;
-  padding: 5px 10px;
-  font-weight: bold;
-  min-width: 150px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-weight: bold;
+    min-width: 150px;
 }
 
 .mission-name {
-  font-weight: bold;
-  font-size: 1rem;
-}
-
-.center-content {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    font-weight: bold;
+    font-size: 1rem;
 }
