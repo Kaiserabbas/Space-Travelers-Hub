@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchRockets, reserveRocket } from '../redux/rockets/rocketsSlice';
+import { fetchRockets, reserveRocket, cancelReservation } from '../redux/rockets/rocketsSlice';
 import '../assets/css/rockets.css';
 
 function Rockets() {
@@ -16,6 +16,10 @@ function Rockets() {
 
   const handleReserveClick = (rocketId) => {
     dispatch(reserveRocket({ id: rocketId }));
+  };
+
+  const handleCancelReservationClick = (rocketId) => {
+    dispatch(cancelReservation({ id: rocketId }));
   };
 
   return (
