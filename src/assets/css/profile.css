@@ -1,0 +1,42 @@
+h1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 0 1em 1.3em;
+}
+
+.profile {
+  display: flex;
+  justify-content: space-between;
+  margin: 2% 5%;
+}
+
+.missions-profile {
+  display: flex;
+  font-size: 1rem;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.missions-list {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  border: 1px solid #eee;
+  padding: 1.5em 1.2em;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.missions-list span {
+  margin: 0 0.7em 0 0;
+}
+
+.mission-name {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
