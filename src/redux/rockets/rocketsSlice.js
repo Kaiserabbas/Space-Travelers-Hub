@@ -27,6 +27,11 @@ const rocketsSlice = createSlice({
       state.rockets = state.rockets.map((rocket) => (
         rocket.id === id ? { ...rocket, reserved: true } : rocket));
     },
+    cancelReservation: (state, action) => {
+      const { id } = action.payload;
+      state.rockets = state.rockets.map((rocket) => (
+        rocket.id === id ? { ...rocket, reserved: false } : rocket));
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -38,5 +43,5 @@ const rocketsSlice = createSlice({
 });
 
 export { fetchRockets };
-export const { reserveRocket } = rocketsSlice.actions;
+export const { reserveRocket, cancelReservation } = rocketsSlice.actions;
 export default rocketsSlice.reducer;
