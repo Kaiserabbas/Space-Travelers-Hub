@@ -12,13 +12,13 @@ const Header = () => (
         <h1>Space Travelers&apos; Hub</h1>
       </div>
       <div className="links">
-        <NavLink to="/" className="link" activeClassName="active-link">
+        <NavLink to="/" className="link">
           Rockets
         </NavLink>
-        <NavLink to="/missions" className="link" activeClassName="active-link">
+        <NavLink to="/missions" className="link">
           Missions
         </NavLink>
-        <NavLink to="/profile" className="link" activeClassName="active-link">
+        <NavLink to="/profile" className="link">
           <span className="link-line">|</span>
           Profile
         </NavLink>
