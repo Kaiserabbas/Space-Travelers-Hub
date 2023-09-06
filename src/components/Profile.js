@@ -24,6 +24,13 @@ function Profile() {
       <div className="profile">
         <div className="rockets-profile">
           <h2>Rockets</h2>
+          <ul>
+            {reservedRockets.map((rocket) => (
+              <li key={rocket.id}>
+                {rocket.rocket_name}
+              </li>
+            ))}
+          </ul>
         </div>
         <div>
           <h2>Joined Missions</h2>
