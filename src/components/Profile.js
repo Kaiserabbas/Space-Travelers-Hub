@@ -7,6 +7,10 @@ function Profile() {
   const dispatch = useDispatch();
   const missions = useSelector((state) => state.missions.missions);
   const joinedMissions = missions.filter((mission) => mission.reserved);
+
+  const rockets = useSelector((state) => state.rockets.rockets);
+  const reservedRockets = rockets.filter((rocket) => rocket.reserved);
+
   const handleJoinMission = (id) => {
     dispatch(joinMission(id));
   };
