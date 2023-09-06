@@ -26,7 +26,12 @@ function Rockets() {
           <div className="rocket-body">
             <h2>{rocket.rocket_name}</h2>
             <p>{rocket.description}</p>
-            <button type="button">Reserve Rocket</button>
+            <button
+              type="button"
+              onClick={() => handleReserveClick(rocket.id)}
+            >
+              Reserve Rocket
+            </button>
           </div>
         </div>
       ))}
