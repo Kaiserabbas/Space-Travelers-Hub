@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { joinMission, leaveMission } from '../redux/missions/missionsSlice';
+import { leaveMission } from '../redux/missions/missionsSlice';
 import '../assets/css/profile.css';
 
 function Profile() {
@@ -11,8 +11,14 @@ function Profile() {
   const rockets = useSelector((state) => state.rockets.rockets);
   const reservedRockets = rockets.filter((rocket) => rocket.reserved);
 
-  const handleJoinMission = (id) => {
-    dispatch(joinMission(id));
+  const [showCancelId, setShowCancelId] = useState(null);
+
+  const handleClick = (id) => {
+    if (showCancelId === id) {
+      setShowCancelId(null);
+    } else {
+      setShowCancelId(id);
+    }
   };
 
   const handleLeaveMission = (id) => {
@@ -20,75 +26,55 @@ function Profile() {
   };
   return (
     <div>
+      <h1>My Profile</h1>
       <div className="profile">
-        <div className="rockets-profile">
+        <div>
           <h2>Rockets</h2>
-          <ul className="rockets-list">
+          <ul className="rockets-profile">
             {reservedRockets.map((rocket) => (
-              <li className="list-item" key={rocket.id}>
-                {rocket.rocket_name}
+              <li className="rockets-list" key={rocket.id}>
+                <span className="list-item">
+                  {rocket.rocket_name}
+                </span>
               </li>
             ))}
           </ul>
         </div>
         <div>
-          <h2>Missions</h2>
-          <ul className="missions-profile">
-            {joinedMissions.map((mission) => (
-              <li key={mission.mission_id} className="missions-list">
-                <span className="mission-name">
-                  ● &nbsp;
-                  {mission.mission_name}
-                </span>
-                <span>
-                  <button
-                    className="not-a-member"
-                    type="button"
-                    style={{
-                      color: 'white',
-                      backgroundColor: mission.reserved ? '#47a5a5' : '#777',
-                      border: 'none',
-                      cursor: 'default',
+          <div>
+            <h2>Missions</h2>
+            <ul className="missions-profile">
+              {joinedMissions.map((mission) => (
+                <li key={mission.mission_id} className="missions-list">
+                  <span
+                    className="mission-name"
+                    onClick={() => handleClick(mission.mission_id)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') {
+                        handleClick();
+                      }
                     }}
-                    disabled
                   >
-                    {mission.reserved ? 'Active Member' : 'Not a Member'}
-                  </button>
-                </span>
-                <span>
-                  {' '}
-                  {mission.reserved
-                    ? (
-                      <button
-                        type="button"
-                        onClick={() => handleLeaveMission(mission.mission_id)}
-                        style={{
-                          border: '1px solid red',
-                          backgroundColor: 'transparent',
-                          color: 'red',
-                        }}
-                      >
-                        Cancel Reservation
-                      </button>
-                    )
-                    : (
-                      <button
-                        type="button"
-                        onClick={() => handleJoinMission(mission.mission_id)}
-                        style={{
-                          border: '1px solid black',
-                          backgroundColor: 'transparent',
-                          color: 'black',
-                        }}
-                      >
-                        Cancel Reservation
-                      </button>
+                    {mission.mission_name}
+                    {showCancelId === mission.mission_id && (
+                    <button
+                      className="missions-cancel"
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleLeaveMission(mission.mission_id);
+                      }}
+                    >
+                      Cancel Reservation
+                    </button>
                     )}
-                </span>
-                {mission.wikipedia && <a href={mission.wikipedia} target="_blank" rel="noopener noreferrer">Wikipedia Link</a>}
-              </li>
-            ))}
-          </ul>
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </div>
