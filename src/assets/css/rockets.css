@@ -17,10 +17,13 @@
 }
 
 .rocket-body span {
-  background: green;
+  background: rgb(2, 146, 2);
   margin-right: 0.5em;
-  padding: 0.125em;
+  padding: 0.125em 0.25em;
   border-radius: 3px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.8em;
 }
 
 .rocket-body button {

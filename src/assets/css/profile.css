@@ -1,9 +1,3 @@
-h1 {
-  text-align: center;
-  font-weight: bold;
-  font-size: 2rem;
-}
-
 h2 {
   font-size: 1.5rem;
   font-weight: bold;
@@ -13,41 +7,44 @@ h2 {
 .profile {
   display: flex;
   justify-content: space-between;
-  margin: 2% 5%;
+  gap: 2em;
 }
 
-.missions-profile {
-  display: flex;
-  font-size: 1rem;
-  flex-direction: column;
-  justify-content: space-between;
+.missions-profile,
+.rockets-profile {
+  width: 100%;
 }
 
 .missions-list,
 .rockets-list {
-  display: flex;
-  align-items: center;
-  justify-content: left;
   border: 1px solid #eee;
-  padding: 1.5em 1.2em;
+  padding: 1.2em 1.5em;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   list-style-type: none;
+  width: 100%;
+  height: 4em;
 }
 
-.missions-list span {
-  margin: 0 0.7em 0 0;
+.mission-name,
+.rocket-name {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  font-size: 1.25em;
 }
 
-.mission-name {
-  font-weight: bold;
-  font-size: 1rem;
+.missions-cancel {
+  color: red;
+  background: transparent;
+  border: 1px solid red;
+  font-size: 0.5em;
+  margin: 0.4em 0 0 0;
 }
 
-.rockets-list {
-  flex-direction: column;
-  gap: 2em;
-}
-
-.list-item {
-  font-size: 1.5em;
+.missions-cancel:hover {
+  opacity: 1;
+  cursor: pointer;
+  color: white;
+  background: red;
+  transform: scale(1.1);
 }

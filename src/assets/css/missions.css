@@ -1,5 +1,6 @@
 table {
   font-size: 0.8rem;
+  border: 1px solid #eee;
 }
 
 thead {
