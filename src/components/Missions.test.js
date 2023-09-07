@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
 import Missions from './Missions';
 import '@testing-library/jest-dom';
-import { joinMission } from '../redux/missions/missionsSlice'; 
+import { joinMission } from '../redux/missions/missionsSlice';
 
 const mockMissions = [
   {
@@ -34,7 +34,7 @@ describe('Missions Component', () => {
     const { getByText } = render(
       <Provider store={store}>
         <Missions />
-      </Provider>
+      </Provider>,
     );
 
     expect(getByText('Test Mission')).toBeInTheDocument();
@@ -47,21 +47,21 @@ describe('Missions Component', () => {
     const { getByText } = render(
       <Provider store={store}>
         <Missions />
-      </Provider>
+      </Provider>,
     );
 
     const joinButton = getByText('Join Mission');
     fireEvent.click(joinButton);
 
-expect(store.getActions()).toContainEqual(joinMission('1'));
+    expect(store.getActions()).toContainEqual(joinMission('1'));
   });
   test('Missions matches snapshot', () => {
-  const { asFragment } = render(
-    <Provider store={store}>
-      <Missions />
-    </Provider>
-  );
+    const { asFragment } = render(
+      <Provider store={store}>
+        <Missions />
+      </Provider>,
+    );
 
-  expect(asFragment()).toMatchSnapshot();
-});
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
