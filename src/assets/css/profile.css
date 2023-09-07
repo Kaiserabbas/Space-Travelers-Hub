@@ -6,16 +6,17 @@ h2 {
 
 .profile {
   display: flex;
-  justify-content: space-around;
-  margin: 5% 5%;
+  justify-content: space-between;
+  gap: 2em;
+  margin: 1% 5%;
 }
 
 .missions-profile,
 .rockets-profile {
-  display: flex;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr 1fr 1fr;
   font-size: 1rem;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .missions-list,
@@ -24,11 +25,8 @@ h2 {
   padding: 1.2em 1.5em;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   list-style-type: none;
-  min-width: 20em;
-  height: 5em;
-  display: flex;
-  align-items: center;
-  justify-content: left;
+  width: 30em;
+  height: 4em;
 }
 
 .mission-name,
