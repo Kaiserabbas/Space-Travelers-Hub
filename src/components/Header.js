@@ -1,8 +1,5 @@
-import { Routes, Route, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import planet from '../assets/planet.png';
-import Rockets from './Rockets';
-import Missions from './Missions';
-import Profile from './Profile';
 
 const Header = () => (
   <>
@@ -25,11 +22,6 @@ const Header = () => (
       </div>
     </header>
     <hr />
-    <Routes>
-      <Route path="/" element={<Rockets />} />
-      <Route path="/missions" element={<Missions />} />
-      <Route path="/profile" element={<Profile />} />
-    </Routes>
   </>
 );
 
