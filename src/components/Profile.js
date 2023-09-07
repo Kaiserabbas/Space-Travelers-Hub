@@ -25,58 +25,57 @@ function Profile() {
     dispatch(leaveMission(id));
   };
   return (
-    <div>
-      <div className="profile">
-        <div>
-          <div>
-            <h2>Missions</h2>
-            <ul className="missions-profile">
-              {joinedMissions.map((mission) => (
-                <li key={mission.mission_id} className="missions-list">
-                  <span
-                    className="mission-name"
-                    onClick={() => handleClick(mission.mission_id)}
-                    role="button"
-                    tabIndex={0}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter') {
-                        handleClick();
-                      }
+    <div className="profile">
+
+      <div className="missions-profile">
+        <h2>My Missions</h2>
+        <ul>
+          {joinedMissions.map((mission) => (
+            <li key={mission.mission_id} className="missions-list">
+              <span
+                className="mission-name"
+                onClick={() => handleClick(mission.mission_id)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    handleClick();
+                  }
+                }}
+              >
+                {mission.mission_name}
+                {showCancelId === mission.mission_id && (
+                  <button
+                    className="missions-cancel"
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleLeaveMission(mission.mission_id);
                     }}
                   >
-                    {mission.mission_name}
-                    {showCancelId === mission.mission_id && (
-                      <button
-                        className="missions-cancel"
-                        type="button"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleLeaveMission(mission.mission_id);
-                        }}
-                      >
-                        Cancel Reservation
-                      </button>
-                    )}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-        <div>
-          <h2>Rockets</h2>
-          <ul className="rockets-profile">
-            {reservedRockets.map((rocket) => (
-              <li className="rockets-list" key={rocket.id}>
-                <span className="list-item">
-                  {rocket.rocket_name}
-                </span>
-              </li>
-            ))}
-          </ul>
-        </div>
+                    Cancel Reservation
+                  </button>
+                )}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="rockets-profile">
+        <h2>My Rockets</h2>
+        <ul>
+          {reservedRockets.map((rocket) => (
+            <li key={rocket.id} className="rockets-list">
+              <span className="rocket-name">
+                {rocket.rocket_name}
+              </span>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
+
   );
 }
 
