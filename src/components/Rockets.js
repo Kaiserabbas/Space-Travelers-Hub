@@ -38,6 +38,11 @@ function Rockets() {
                 <button
                   type="button"
                   onClick={() => handleCancelReservationClick(rocket.id)}
+                  style={{
+                    border: '1.5px solid gray',
+                    background: 'transparent',
+                    color: 'gray',
+                  }}
                 >
                   Cancel Reservation
                 </button>
