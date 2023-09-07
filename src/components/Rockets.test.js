@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import Rockets from './Rockets';
-import { reserveRocket } from '../redux/rockets/rocketsSlice';
+import { reserveRocket, cancelReservation } from '../redux/rockets/rocketsSlice';
 
 const mockStore = configureMockStore([thunk]);
 
@@ -56,5 +56,18 @@ describe('Rockets Component', () => {
     fireEvent.click(reserveButtonElement);
 
     expect(store.getActions()).toContainEqual(reserveRocket({ id: '5e9d0d95eda69955f709d1eb' }));
+  });
+
+  test('Clicking Cancel Reservation dispatches cancelReservation action', async () => {
+    render(
+      <Provider store={store}>
+        <Rockets />
+      </Provider>,
+    );
+
+    const cancelReservationButtonElement = screen.getByText('Cancel Reservation');
+    fireEvent.click(cancelReservationButtonElement);
+
+    expect(store.getActions()).toContainEqual(cancelReservation({ id: '5e9d0d95eda69973a809d1ec' }));
   });
 });
