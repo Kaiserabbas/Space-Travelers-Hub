@@ -70,4 +70,14 @@ describe('Rockets Component', () => {
 
     expect(store.getActions()).toContainEqual(cancelReservation({ id: '5e9d0d95eda69973a809d1ec' }));
   });
+
+  test('Rockets component matches snapshot', () => {
+    const { asFragment } = render(
+      <Provider store={store}>
+        <Rockets />
+      </Provider>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
