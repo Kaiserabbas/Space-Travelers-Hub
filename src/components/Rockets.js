@@ -26,7 +26,7 @@ function Rockets() {
     <>
       {rockets.map((rocket) => (
         <div className="rocket" key={rocket.id}>
-          <img src={rocket.flickr_images[0]} alt="Rocket" />
+          <img src={rocket.flickr_images ? rocket.flickr_images[0] : ''} alt="Rocket" />
           <div className="rocket-body">
             <h2>{rocket.rocket_name}</h2>
             {rocket.reserved ? (
