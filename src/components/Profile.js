@@ -26,7 +26,6 @@ function Profile() {
   };
   return (
     <div>
-      <h1>My Profile</h1>
       <div className="profile">
         <div>
           <h2>Rockets</h2>
