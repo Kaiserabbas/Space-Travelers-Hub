@@ -33,18 +33,3 @@ h2 {
   font-size: 1.25em;
 }
 
-.missions-cancel {
-  color: red;
-  background: transparent;
-  border: 1px solid red;
-  font-size: 0.5em;
-  margin: 0.4em 0 0 0;
-}
-
-.missions-cancel:hover {
-  opacity: 1;
-  cursor: pointer;
-  color: white;
-  background: red;
-  transform: scale(1.1);
-}

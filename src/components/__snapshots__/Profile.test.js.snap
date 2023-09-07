@@ -17,8 +17,6 @@ exports[`Profile Component Profile matches snapshot 1`] = `
         >
           <span
             class="mission-name"
-            role="button"
-            tabindex="0"
           >
             Sample Mission
           </span>

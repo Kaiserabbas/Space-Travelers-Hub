@@ -18,8 +18,8 @@ const Header = () => (
         <NavLink to="/missions" className="link">
           Missions
         </NavLink>
+        |
         <NavLink to="/profile" className="link">
-          <span className="link-line">|</span>
           Profile
         </NavLink>
       </div>
