@@ -28,18 +28,6 @@ function Profile() {
     <div>
       <div className="profile">
         <div>
-          <h2>Rockets</h2>
-          <ul className="rockets-profile">
-            {reservedRockets.map((rocket) => (
-              <li className="rockets-list" key={rocket.id}>
-                <span className="list-item">
-                  {rocket.rocket_name}
-                </span>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
           <div>
             <h2>Missions</h2>
             <ul className="missions-profile">
@@ -58,22 +46,34 @@ function Profile() {
                   >
                     {mission.mission_name}
                     {showCancelId === mission.mission_id && (
-                    <button
-                      className="missions-cancel"
-                      type="button"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleLeaveMission(mission.mission_id);
-                      }}
-                    >
-                      Cancel Reservation
-                    </button>
+                      <button
+                        className="missions-cancel"
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleLeaveMission(mission.mission_id);
+                        }}
+                      >
+                        Cancel Reservation
+                      </button>
                     )}
                   </span>
                 </li>
               ))}
             </ul>
           </div>
+        </div>
+        <div>
+          <h2>Rockets</h2>
+          <ul className="rockets-profile">
+            {reservedRockets.map((rocket) => (
+              <li className="rockets-list" key={rocket.id}>
+                <span className="list-item">
+                  {rocket.rocket_name}
+                </span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>
